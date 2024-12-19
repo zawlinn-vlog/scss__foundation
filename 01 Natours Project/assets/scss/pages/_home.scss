@@ -1,0 +1,9 @@
+//
+
+@use "../abstract/variables" as var;
+
+.wrapper {
+  max-width: var.$max-width;
+  margin-inline: auto;
+  padding: 1.5rem;
+}

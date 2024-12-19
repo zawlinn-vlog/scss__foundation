@@ -1,0 +1,17 @@
+//
+
+@use "../abstract/mixin" as mx;
+
+@include mx.animate(right, X, -10rem, 1rem);
+@include mx.animate(left, X, 10rem, -1rem);
+
+@keyframes animation-top {
+  from {
+    transform: translateY(3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

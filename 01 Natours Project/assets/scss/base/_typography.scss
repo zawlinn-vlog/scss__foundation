@@ -1,0 +1,28 @@
+//
+
+@use "../abstract/function" as fun;
+
+.headers {
+  &-title {
+    & > * {
+      display: block;
+      color: fun.getColor(light);
+      font-weight: 400;
+
+      backface-visibility: hidden;
+    }
+    &__txt {
+      font-size: 6rem;
+      letter-spacing: 3.5rem;
+      animation: animation-right 1s ease-in;
+    }
+  }
+
+  &-subtitle {
+    &__txt {
+      font-size: 2rem;
+      letter-spacing: 1.75rem;
+      animation: animation-left 1s ease-in;
+    }
+  }
+}

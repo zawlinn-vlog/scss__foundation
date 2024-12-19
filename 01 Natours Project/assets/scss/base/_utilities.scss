@@ -1,0 +1,16 @@
+//
+
+@use "sass:list";
+@use "../abstract/variables" as var;
+
+@each $name, $pos in var.$positions {
+  .text-#{$name} {
+    text-align: $pos;
+  }
+}
+
+@for $i from 1 through 3 {
+  .text-#{list.nth(var.$types, $i)} {
+    text-transform: list.nth(var.$types, $i);
+  }
+}
