@@ -1,6 +1,9 @@
 //
 
 @use "../abstract/function" as fun;
+@use "../abstract/variables" as var;
+
+//
 
 .headers {
   &-title {
@@ -24,5 +27,26 @@
       letter-spacing: 1.75rem;
       animation: animation-left 1s ease-in;
     }
+  }
+}
+
+.title {
+  display: inline-block;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(var.$color-primary-light, 0.8),
+    rgba(var.$color-primary-dark, 0.9)
+  );
+  padding: 1rem;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  letter-spacing: 0.02rem;
+
+  transition: all 0.3s linear;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
   }
 }

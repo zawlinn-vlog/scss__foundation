@@ -14,3 +14,11 @@
     text-transform: list.nth(var.$types, $i);
   }
 }
+
+.clearFix {
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

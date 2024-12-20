@@ -48,7 +48,7 @@ $colors: (
   "primary": $color-primary,
   "primary-light": $color-primary-light,
   "primary-dark": $color-primary-dark,
-  "prmary-gradient": $color-primary-gradient,
+  "primary-gradient": $color-primary-gradient,
   "secondary-light": $color-secondary-light,
   "secondary-dark": $color-secondary-dark,
   "secondary-gradient": $color-secondary-gradient,
@@ -67,6 +67,8 @@ $colors: (
 );
 
 $max-width: 160rem;
+$gap-row: 8rem;
+$gap-col: 6rem;
 
 $positions: (
   "start": left,
