@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+/*
+
+LISTS Function
+
+$list: val val val;
+$list: val, val, val;
+$list: [val, val, val]
+
+length(list)
+nth(list, index)
+set-nth(list, index, newVal)
+join(list1,list2)
+join(list1,list2, space) comma
+append(list, newVal)
+zip(list1, list2) pair list1 and list2 same index vals
+index(lsit, val) return index number
+
+
+COLOR Functions
+
+lighten(color, 0-100)
+darken()
+adjust-hue()
+saturate()
+desaturate()
+mx(color1, color2, 0-100)
+transparentize()
+
+SELECTOR FUNCtion
+
+selector-nest('ul', 'li')
+selector-nest('ul, li', 'p')
+selector-nest('p', '&:hover')
+selector-append('a', '.active')
+selector-replace('a.active','.active', '.visited')
+is-superselector()
+simple-selectors('a.abc') // a, .abc
+selector-unify()
+selector-extend()
+
+STRING FUNCTION
+
+quote()
+unquote()
+to-upper-case()
+to-lower-case()
+str-index()
+str-length()
+str-slice()
+
+variable-exists()
+global-variable-exists()
+mixin-exists()
+function-exists()
+type-of()
+inspect()
+
+
+*/
+:root {
+  --primary-color: #55c57a;
+  --primary-light-color: #7ed56f;
+  --primary-dark-color: #28b485;
+  --primary-gradient-color: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9)), url("../img/hero.jpg");
+  --secondary-light-color: #ffb900;
+  --secondary-dark-color: #ff7730;
+  --secondary-gradient-color: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg");
+  --tertiary-light-color: #2998ff;
+  --tertiary-dark-color: #5643fa;
+  --tertiary-gradient-color: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-7.jpg");
+  --grey-light-1-color: #f7f7f7;
+  --grey-light-2-color: #eee;
+  --grey-dark-1-color: #777;
+  --grey-dark-2-color: #999;
+  --grey-dark-3-color: #333;
+  --light-color: #fff;
+  --dark-color: #000;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: "lato", sans-serif;
+  font-size: 62.5%;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: var(--grey-dark-2-color);
+}
+
+.text-start {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: right;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/*
+
+
+LISTS Function
+
+$list: val val val;
+$list: val, val, val;
+$list: [val, val, val]
+
+length(list)
+nth(list, index)
+set-nth(list, index, newVal)
+join(list1,list2)
+join(list1,list2, space) comma
+append(list, newVal)
+zip(list1, list2) pair list1 and list2 same index vals
+index(lsit, val) return index number
+
+
+
+*/
+/* Margin Top */
+.mt-2 {
+  margin-top: 2px;
+}
+
+/* Margin Right */
+.mr-2 {
+  margin-right: 2px;
+}
+
+/* Margin Bottom */
+.mb-2 {
+  margin-bottom: 2px;
+}
+
+/* Margin Left */
+.ml-2 {
+  margin-left: 2px;
+}
+
+/* Margin Horizontal */
+.mx-2 {
+  margin-inline: 2px;
+}
+
+/* Margin Vertical */
+.my-2 {
+  margin: 2px 0;
+}
+
+/* Margin Top */
+.mt-4 {
+  margin-top: 4px;
+}
+
+/* Margin Right */
+.mr-4 {
+  margin-right: 4px;
+}
+
+/* Margin Bottom */
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+/* Margin Left */
+.ml-4 {
+  margin-left: 4px;
+}
+
+/* Margin Horizontal */
+.mx-4 {
+  margin-inline: 4px;
+}
+
+/* Margin Vertical */
+.my-4 {
+  margin: 4px 0;
+}
+
+/* Margin Top */
+.mt-8 {
+  margin-top: 8px;
+}
+
+/* Margin Right */
+.mr-8 {
+  margin-right: 8px;
+}
+
+/* Margin Bottom */
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+/* Margin Left */
+.ml-8 {
+  margin-left: 8px;
+}
+
+/* Margin Horizontal */
+.mx-8 {
+  margin-inline: 8px;
+}
+
+/* Margin Vertical */
+.my-8 {
+  margin: 8px 0;
+}
+
+/* Margin Top */
+.mt-12 {
+  margin-top: 12px;
+}
+
+/* Margin Right */
+.mr-12 {
+  margin-right: 12px;
+}
+
+/* Margin Bottom */
+.mb-12 {
+  margin-bottom: 12px;
+}
+
+/* Margin Left */
+.ml-12 {
+  margin-left: 12px;
+}
+
+/* Margin Horizontal */
+.mx-12 {
+  margin-inline: 12px;
+}
+
+/* Margin Vertical */
+.my-12 {
+  margin: 12px 0;
+}
+
+/* Margin Top */
+.mt-16 {
+  margin-top: 16px;
+}
+
+/* Margin Right */
+.mr-16 {
+  margin-right: 16px;
+}
+
+/* Margin Bottom */
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+/* Margin Left */
+.ml-16 {
+  margin-left: 16px;
+}
+
+/* Margin Horizontal */
+.mx-16 {
+  margin-inline: 16px;
+}
+
+/* Margin Vertical */
+.my-16 {
+  margin: 16px 0;
+}
+
+/* Margin Top */
+.mt-24 {
+  margin-top: 24px;
+}
+
+/* Margin Right */
+.mr-24 {
+  margin-right: 24px;
+}
+
+/* Margin Bottom */
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+/* Margin Left */
+.ml-24 {
+  margin-left: 24px;
+}
+
+/* Margin Horizontal */
+.mx-24 {
+  margin-inline: 24px;
+}
+
+/* Margin Vertical */
+.my-24 {
+  margin: 24px 0;
+}
+
+/* Margin Top */
+.mt-32 {
+  margin-top: 32px;
+}
+
+/* Margin Right */
+.mr-32 {
+  margin-right: 32px;
+}
+
+/* Margin Bottom */
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+/* Margin Left */
+.ml-32 {
+  margin-left: 32px;
+}
+
+/* Margin Horizontal */
+.mx-32 {
+  margin-inline: 32px;
+}
+
+/* Margin Vertical */
+.my-32 {
+  margin: 32px 0;
+}
+
+/* Margin Top */
+.mt-48 {
+  margin-top: 48px;
+}
+
+/* Margin Right */
+.mr-48 {
+  margin-right: 48px;
+}
+
+/* Margin Bottom */
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+/* Margin Left */
+.ml-48 {
+  margin-left: 48px;
+}
+
+/* Margin Horizontal */
+.mx-48 {
+  margin-inline: 48px;
+}
+
+/* Margin Vertical */
+.my-48 {
+  margin: 48px 0;
+}
+
+/* Margin Top */
+.mt-64 {
+  margin-top: 64px;
+}
+
+/* Margin Right */
+.mr-64 {
+  margin-right: 64px;
+}
+
+/* Margin Bottom */
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+/* Margin Left */
+.ml-64 {
+  margin-left: 64px;
+}
+
+/* Margin Horizontal */
+.mx-64 {
+  margin-inline: 64px;
+}
+
+/* Margin Vertical */
+.my-64 {
+  margin: 64px 0;
+}
+
+/* Margin Top */
+.mt-80 {
+  margin-top: 80px;
+}
+
+/* Margin Right */
+.mr-80 {
+  margin-right: 80px;
+}
+
+/* Margin Bottom */
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+/* Margin Left */
+.ml-80 {
+  margin-left: 80px;
+}
+
+/* Margin Horizontal */
+.mx-80 {
+  margin-inline: 80px;
+}
+
+/* Margin Vertical */
+.my-80 {
+  margin: 80px 0;
+}
+
+/* Margin Top */
+.mt-96 {
+  margin-top: 96px;
+}
+
+/* Margin Right */
+.mr-96 {
+  margin-right: 96px;
+}
+
+/* Margin Bottom */
+.mb-96 {
+  margin-bottom: 96px;
+}
+
+/* Margin Left */
+.ml-96 {
+  margin-left: 96px;
+}
+
+/* Margin Horizontal */
+.mx-96 {
+  margin-inline: 96px;
+}
+
+/* Margin Vertical */
+.my-96 {
+  margin: 96px 0;
+}
+
+/* Margin Top */
+.mt-128 {
+  margin-top: 128px;
+}
+
+/* Margin Right */
+.mr-128 {
+  margin-right: 128px;
+}
+
+/* Margin Bottom */
+.mb-128 {
+  margin-bottom: 128px;
+}
+
+/* Margin Left */
+.ml-128 {
+  margin-left: 128px;
+}
+
+/* Margin Horizontal */
+.mx-128 {
+  margin-inline: 128px;
+}
+
+/* Margin Vertical */
+.my-128 {
+  margin: 128px 0;
+}
+
+.mt-4 {
+  margin-top: 4.5rem;
+}
+
+.mb-3 {
+  margin-bottom: 2.4rem;
+}
+
+.px-3 {
+  padding-inline: 3rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* 
+FONT SIZE in Pixel - 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 96 
+SPACE SYSTEM in Pixel -  2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+.title {
+  display: inline-block;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.9));
+  padding: 1rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.6rem;
+  letter-spacing: 0.03rem;
+  transition: all 0.3s linear;
+}
+.title:hover {
+  transform: skewY(2deg) skewX(15deg) scale(1.1);
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,47 @@
+//
+
+@use "../abstract/variables" as var;
+
+.row {
+  max-width: 110rem;
+  margin-inline: auto;
+
+  &::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var.$gap-row;
+  }
+
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-inline-end: var.$gap-col;
+    }
+  }
+
+  @for $i from 2 through 4 {
+    .col-1-of-#{$i} {
+      width: calc((100% - var.$gap-col * ($i - 1)) / $i);
+    }
+
+    @if ($i >= 3) {
+      @for $j from 2 through 4 {
+        @if ($i - 1 >= $j) {
+          .col-#{$j}-of-#{$i} {
+            width: calc(
+              $j *
+                ((100% - var.$gap-col * ($i - 1)) / $i) +
+                var.$gap-col *
+                ($j - 1)
+            );
+          }
+        }
+      }
+    }
+  }
+}

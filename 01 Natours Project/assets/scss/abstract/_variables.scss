@@ -1,0 +1,145 @@
+// fonts
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+// COLORS
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-primary-gradient: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.9)
+  ),
+  url("../img/hero.jpg");
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-secondary-gradient: linear-gradient(
+    to right bottom,
+    rgba($color-secondary-light, 1),
+    rgba($color-secondary-dark, 1)
+  ),
+  url("../img/nat-5.jpg");
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-tertiary-gradient: linear-gradient(
+    to right bottom,
+    rgba($color-tertiary-light, 1),
+    rgba($color-tertiary-dark, 1)
+  ),
+  url("../img/nat-7.jpg");
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+$colors: (
+  "primary": $color-primary,
+  "primary-light": $color-primary-light,
+  "primary-dark": $color-primary-dark,
+  "primary-gradient": $color-primary-gradient,
+  "secondary-light": $color-secondary-light,
+  "secondary-dark": $color-secondary-dark,
+  "secondary-gradient": $color-secondary-gradient,
+
+  "tertiary-light": $color-tertiary-light,
+  "tertiary-dark": $color-tertiary-dark,
+  "tertiary-gradient": $color-tertiary-gradient,
+
+  "grey-light-1": $color-grey-light-1,
+  "grey-light-2": $color-grey-light-2,
+  "grey-dark-1": $color-grey-dark,
+  "grey-dark-2": $color-grey-dark-2,
+  "grey-dark-3": $color-grey-dark-3,
+  "light": $color-white,
+  "dark": $color-black,
+);
+
+$max-width: 114rem;
+$gap-row: 8rem;
+$gap-col: 6rem;
+
+$positions: (
+  "start": left,
+  "center": center,
+  "end": right,
+);
+
+/*
+
+LISTS Function
+
+$list: val val val;
+$list: val, val, val;
+$list: [val, val, val]
+
+length(list)
+nth(list, index)
+set-nth(list, index, newVal)
+join(list1,list2)
+join(list1,list2, space) comma
+append(list, newVal)
+zip(list1, list2) pair list1 and list2 same index vals
+index(lsit, val) return index number
+
+
+COLOR Functions
+
+lighten(color, 0-100)
+darken()
+adjust-hue()
+saturate()
+desaturate()
+mx(color1, color2, 0-100)
+transparentize()
+
+SELECTOR FUNCtion
+
+selector-nest('ul', 'li')
+selector-nest('ul, li', 'p')
+selector-nest('p', '&:hover')
+selector-append('a', '.active')
+selector-replace('a.active','.active', '.visited')
+is-superselector()
+simple-selectors('a.abc') // a, .abc
+selector-unify()
+selector-extend()
+
+STRING FUNCTION
+
+quote()
+unquote()
+to-upper-case()
+to-lower-case()
+str-index()
+str-length()
+str-slice()
+
+variable-exists()
+global-variable-exists()
+mixin-exists()
+function-exists()
+type-of()
+inspect()
+
+
+*/
+
+$types: uppercase, lowercase, capitalize;
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}-color: #{$color};
+  }
+}
